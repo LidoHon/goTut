@@ -70,7 +70,7 @@ func getFirstNames() []string {
 	firstNames := []string{}
 	for _, booking := range bookings {
 		// Extract first name from the booking map
-		firstNames = append(firstNames, booking["firstName"])
+		firstNames = append(firstNames, booking.firstName)
 	}
 	return firstNames
 }
@@ -96,7 +96,7 @@ func getUserInput() (string, string, string, uint) {
 	return firstName, lastName, email, userTickets
 }
 
-func bookTicket(remainingTickets *uint, firstName string, lastName string, email string, userTickets uint, bookings *[]map[string]string) {
+func bookTicket(remainingTickets *uint, firstName string, lastName string, email string, userTickets uint, bookings *[]userData) {
 	*remainingTickets -= userTickets
 
 // create a struct for a user
